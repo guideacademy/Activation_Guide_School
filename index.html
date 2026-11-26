@@ -686,11 +686,53 @@ footer a {
                 and content correction requests.
             </p>
 
-            <div class="contact-note">
-                Our contact channel is not yet available.
-                For card-specific assistance, contact
-                your card issuer directly.
-            </div>
+            
+<form action="https://script.google.com/macros/s/AKfycbz26xwEm1bydNoVtBspZW0LyO7C0pvGU8tk13Em9k-Wf2zDfQuSAFenw43_-j19oFnhJA/exec" method="POST"
+      style="display:grid;gap:16px;max-width:600px;">
+
+    <label for="name">Your name</label>
+    <input type="text" id="name" name="name"
+           maxlength="80" required
+           autocomplete="name"
+           style="padding:12px;border:1px solid #dce4ef;border-radius:8px;width:100%;">
+
+    <label for="email">Email address</label>
+    <input type="email" id="email" name="email"
+           maxlength="254" required
+           autocomplete="email"
+           style="padding:12px;border:1px solid #dce4ef;border-radius:8px;width:100%;">
+
+    <label for="topic">Enquiry type</label>
+    <select id="topic" name="topic" required
+            style="padding:12px;border:1px solid #dce4ef;border-radius:8px;width:100%;">
+
+        <option value="">Select a topic</option>
+        <option>Website feedback</option>
+        <option>Content correction</option>
+        <option>General educational enquiry</option>
+
+    </select>
+
+    <div hidden>
+        <input type="text" name="website"
+               tabindex="-1" autocomplete="off">
+    </div>
+
+    <p style="font-size:13px;">
+        Your name, email and enquiry topic will be
+        processed through Google Apps Script and
+        delivered to our email inbox for responding
+        to your enquiry.
+        <a href="#privacy">Privacy Policy</a>
+    </p>
+
+    <button type="submit"
+            style="background:#1749b0;color:white;padding:14px;border:0;border-radius:8px;font-size:16px;cursor:pointer;">
+        Submit Enquiry
+    </button>
+
+</form>
+
 
             <p>
                 Never send payment card numbers,
