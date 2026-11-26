@@ -4,17 +4,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Independent educational guidance on prepaid retail card activation, safe card usage and common activation issues.">
+
 <title>Prepaid Card Activation Guide | Guide Academy</title>
+
+<meta name="description" content="An independent educational guide to prepaid retail card activation, common card issues and safe card usage.">
 
 <style>
 :root {
+    --primary: #1749b0;
     --navy: #142b49;
-    --blue: #2563eb;
-    --light: #eff6ff;
+    --light: #eef4ff;
+    --background: #f7f9fc;
+    --text: #475569;
+    --border: #dce4ef;
     --white: #ffffff;
-    --text: #334155;
-    --border: #e2e8f0;
 }
 
 * {
@@ -23,13 +26,14 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
     color: var(--text);
-    background: #f8fafc;
     line-height: 1.7;
 }
 
@@ -40,90 +44,125 @@ body {
 }
 
 header {
-    background: white;
+    background: var(--white);
     border-bottom: 1px solid var(--border);
     padding: 18px 0;
 }
 
 .navigation {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     gap: 15px;
 }
 
 .logo {
-    font-size: 23px;
-    font-weight: 800;
     color: var(--navy);
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
 .logo span {
-    color: var(--blue);
+    color: var(--primary);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 nav a {
-    text-decoration: none;
-    color: var(--navy);
     font-size: 14px;
-    margin-left: 20px;
+    font-weight: 600;
+    color: var(--navy);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--primary);
 }
 
 .hero {
-    background: linear-gradient(135deg, #142b49, #245eb5);
-    padding: 75px 0;
+    background: linear-gradient(
+        135deg, #142b49, #1749b0
+    );
     color: white;
+    padding: 75px 0;
 }
 
 .tag {
     display: inline-block;
-    padding: 6px 14px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,.15);
     border-radius: 30px;
+    padding: 6px 15px;
     font-size: 13px;
 }
 
 h1 {
-    font-size: clamp(32px, 5vw, 48px);
-    line-height: 1.2;
-    margin: 20px 0;
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.15;
+    margin: 22px 0;
+    letter-spacing: -1px;
 }
 
 .hero p {
-    max-width: 650px;
-    color: #dbeafe;
+    max-width: 680px;
+    color: #e0eaff;
     font-size: 17px;
+}
+
+.hero .disclosure {
+    font-size: 13px;
+    max-width: 680px;
 }
 
 .button {
     display: inline-block;
-    padding: 13px 25px;
     background: white;
     color: var(--navy);
-    text-decoration: none;
-    font-weight: 700;
+    padding: 13px 25px;
     border-radius: 8px;
-    margin-top: 12px;
-}
-
-.notice {
-    padding: 18px 22px;
-    background: var(--light);
-    border-left: 4px solid var(--blue);
-    border-radius: 6px;
-    margin: 30px 0;
-    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px 0;
 }
 
 section {
-    padding: 32px 0;
+    padding: 35px 0;
 }
 
 h2 {
     color: var(--navy);
-    font-size: 28px;
+    font-size: 29px;
     line-height: 1.3;
+    margin: 0 0 15px;
+    letter-spacing: -.5px;
+}
+
+h3 {
+    color: var(--navy);
+    line-height: 1.4;
+}
+
+.eyebrow {
+    color: var(--primary);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.notice {
+    background: #eef4ff;
+    border-left: 4px solid var(--primary);
+    border-radius: 6px;
+    padding: 20px;
+    margin: 28px 0 5px;
+    font-size: 14px;
 }
 
 .grid {
@@ -133,69 +172,127 @@ h2 {
 }
 
 .card {
-    padding: 26px;
     background: white;
+    padding: 24px;
     border: 1px solid var(--border);
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 18px rgba(0,0,0,.025);
 }
 
-.card h3 {
-    color: var(--navy);
-    margin: 12px 0;
+.card p {
+    font-size: 15px;
 }
 
 .number {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    color: var(--primary);
     background: var(--light);
-    color: var(--blue);
+    border-radius: 10px;
     font-weight: bold;
 }
 
-.steps {
+.step {
     background: white;
-    padding: 25px 30px;
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 10px;
+    padding: 22px;
+    margin: 12px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
 }
 
-.steps li {
-    padding: 10px 0;
+.step .number {
+    flex-shrink: 0;
+}
+
+.step h3 {
+    margin: 0 0 7px;
+}
+
+.step p {
+    margin: 0;
+}
+
+.safety {
+    background: #eaf5f0;
+    border: 1px solid #c6e4d6;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.safety h2 {
+    color: #19543d;
 }
 
 details {
     background: white;
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 17px 20px;
     margin-bottom: 12px;
+    padding: 17px 20px;
 }
 
 summary {
-    cursor: pointer;
     font-weight: 600;
     color: var(--navy);
+    cursor: pointer;
 }
 
-footer {
-    background: var(--navy);
-    color: #cbd5e1;
-    padding: 35px 0;
-    margin-top: 35px;
+details p {
+    font-size: 15px;
+}
+
+.contact-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.contact-note {
+    padding: 15px;
+    background: var(--light);
+    border-radius: 8px;
     font-size: 14px;
 }
 
-footer a {
+footer {
+    margin-top: 30px;
+    padding: 40px 0;
+    background: var(--navy);
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+footer strong {
     color: white;
+    font-size: 21px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 20px 0;
+}
+
+footer a {
+    color: #e2e8f0;
     text-decoration: none;
 }
 
-@media (max-width: 700px) {
+.copyright {
+    border-top: 1px solid #ffffff20;
+    padding-top: 18px;
+    margin-top: 25px;
+}
+
+@media (max-width: 760px) {
     .grid {
         grid-template-columns: 1fr;
     }
@@ -204,11 +301,23 @@ footer a {
         padding: 45px 0;
     }
 
-    nav a {
-        margin: 0 15px 0 0;
+    nav {
+        gap: 14px;
     }
 
-    .card {
+    nav a {
+        font-size: 13px;
+    }
+
+    section {
+        padding: 26px 0;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .card, .contact-box {
         padding: 20px;
     }
 }
@@ -219,12 +328,16 @@ footer a {
 
 <header>
     <div class="container navigation">
-        <div class="logo">Guide<span>Academy</span></div>
+        <div class="logo">
+            Guide<span>Academy</span>
+        </div>
 
         <nav aria-label="Main navigation">
-            <a href="#guide">Activation Guide</a>
+            <a href="#guide">Guide</a>
+            <a href="#troubleshooting">Troubleshooting</a>
             <a href="#faq">FAQs</a>
             <a href="#about">About</a>
+            <a href="#contact">Contact</a>
         </nav>
     </div>
 </header>
@@ -234,19 +347,27 @@ footer a {
 <div class="hero">
     <div class="container">
 
-        <span class="tag">Independent Educational Resource</span>
+        <span class="tag">
+            Independent Educational Resource
+        </span>
 
         <h1>Understanding Prepaid<br>Card Activation</h1>
 
         <p>
-            Learn how prepaid retail card activation generally
-            works, what to prepare, and how to resolve
-            common activation issues safely.
+            Explore general prepaid retail card activation
+            procedures, preparation requirements and
+            practical information for safe card usage.
         </p>
 
         <a class="button" href="#guide">
-            Explore the Guide
+            Read the Guide
         </a>
+
+        <p class="disclosure">
+            Educational information only. We do not issue
+            or activate cards and are not affiliated with
+            any card provider.
+        </p>
 
     </div>
 </div>
@@ -254,102 +375,198 @@ footer a {
 <div class="container">
 
     <div class="notice">
-        <strong>Important:</strong> Guide Academy is an
-        independent educational website. We are not a card
-        issuer, financial institution or authorized activation
-        service. Cards must be activated through their
-        respective issuers.
+        <strong>Important information:</strong>
+        This website is not an activation portal.
+        All card activation and account verification
+        must take place through the respective card
+        issuer's official channels.
     </div>
 
-    <section>
-        <h2>Before You Get Started</h2>
+    <section id="preparation">
+
+        <div class="eyebrow">Getting Started</div>
+
+        <h2>Before You Activate a Card</h2>
+
+        <p>
+            Preparation can help you understand the
+            requirements and avoid common activation
+            problems.
+        </p>
 
         <div class="grid">
 
             <article class="card">
                 <div class="number">01</div>
-                <h3>Review Your Card</h3>
+                <h3>Identify Your Card</h3>
                 <p>
-                    Read the instructions included with your
-                    card and identify the issuing company.
+                    Review the card packaging and
+                    documentation to identify the
+                    issuer and card type.
                 </p>
             </article>
 
             <article class="card">
                 <div class="number">02</div>
-                <h3>Find Official Instructions</h3>
+                <h3>Review Requirements</h3>
                 <p>
-                    Refer to the issuer's official website,
-                    application or activation instructions.
+                    Some prepaid cards require
+                    registration or identity verification.
+                    Requirements vary by provider.
                 </p>
             </article>
 
             <article class="card">
                 <div class="number">03</div>
-                <h3>Protect Your Information</h3>
+                <h3>Use Official Channels</h3>
                 <p>
-                    Never share card credentials, passwords
-                    or verification codes with unofficial
-                    websites.
+                    Locate the official website,
+                    application or telephone instructions
+                    supplied with your card.
                 </p>
             </article>
 
         </div>
+
     </section>
 
     <section id="guide">
 
-        <h2>General Card Activation Guide</h2>
+        <div class="eyebrow">Educational Walkthrough</div>
+
+        <h2>General Activation Guide</h2>
 
         <p>
-            Activation requirements vary depending on the
-            card type and issuing company.
+            The following steps describe a typical
+            activation process. Your card issuer's
+            instructions should always take priority.
         </p>
 
-        <div class="steps">
-            <ol>
-                <li>Review the activation instructions supplied with your card.</li>
-                <li>Locate the official activation channel provided by the issuer.</li>
-                <li>Follow the issuer's identity and card verification instructions, if required.</li>
-                <li>Check for confirmation that your card has been activated.</li>
-                <li>Review the applicable cardholder agreement, fees and usage limits.</li>
-            </ol>
-        </div>
+        <article class="step">
+            <div class="number">1</div>
+            <div>
+                <h3>Read the Included Instructions</h3>
+                <p>
+                    Check the packaging and accompanying
+                    documents for activation requirements,
+                    eligibility conditions and applicable fees.
+                </p>
+            </div>
+        </article>
+
+        <article class="step">
+            <div class="number">2</div>
+            <div>
+                <h3>Locate the Official Activation Method</h3>
+                <p>
+                    Use the verified website, application
+                    or phone number provided directly
+                    by the card issuer.
+                </p>
+            </div>
+        </article>
+
+        <article class="step">
+            <div class="number">3</div>
+            <div>
+                <h3>Follow the Issuer's Instructions</h3>
+                <p>
+                    Complete any required registration
+                    or verification only through the
+                    official activation channel.
+                </p>
+            </div>
+        </article>
+
+        <article class="step">
+            <div class="number">4</div>
+            <div>
+                <h3>Confirm Activation Status</h3>
+                <p>
+                    Check whether the issuer confirms
+                    that your card is ready for use.
+                    Contact official support if necessary.
+                </p>
+            </div>
+        </article>
+
+        <article class="step">
+            <div class="number">5</div>
+            <div>
+                <h3>Understand Your Card's Conditions</h3>
+                <p>
+                    Review spending limits, fees,
+                    balance management options and
+                    other applicable cardholder terms.
+                </p>
+            </div>
+        </article>
 
     </section>
 
-    <section>
+    <section id="troubleshooting">
 
-        <h2>Common Activation Issues</h2>
+        <div class="eyebrow">Common Questions</div>
+
+        <h2>Activation Troubleshooting</h2>
 
         <div class="grid">
 
             <article class="card">
-                <h3>Activation Unsuccessful</h3>
+                <h3>Activation Failed</h3>
                 <p>
-                    Review the issuer's instructions and
-                    contact its official support channel
-                    if the issue continues.
+                    Confirm that you are following the
+                    correct instructions for your card.
+                    Contact the issuer if the problem persists.
                 </p>
             </article>
 
             <article class="card">
-                <h3>Verification Problems</h3>
+                <h3>Verification Issues</h3>
                 <p>
-                    Some cards require identity verification.
-                    Follow the requirements provided by
-                    your issuer.
+                    Review the issuer's verification
+                    requirements. Do not submit identity
+                    documents to unofficial websites.
                 </p>
             </article>
 
             <article class="card">
                 <h3>Card Not Working</h3>
                 <p>
-                    Confirm activation status and review
-                    any restrictions or eligibility
-                    requirements with the issuer.
+                    Check whether activation is complete.
+                    Review balance, transaction restrictions
+                    and any applicable usage limitations.
                 </p>
             </article>
+
+        </div>
+
+    </section>
+
+    <section id="safety">
+
+        <div class="safety">
+
+            <h2>Keep Your Card Information Safe</h2>
+
+            <p>
+                Protecting your personal and financial
+                information is essential when activating
+                or managing a payment card.
+            </p>
+
+            <ul>
+                <li>Use only verified issuer websites.</li>
+                <li>Never share your PIN or security codes with unofficial services.</li>
+                <li>Avoid unfamiliar activation links received through messages.</li>
+                <li>Do not share account passwords or one-time verification codes.</li>
+                <li>Contact your issuer directly about suspicious activity.</li>
+            </ul>
+
+            <strong>
+                Guide Academy does not request payment
+                card credentials or account access.
+            </strong>
 
         </div>
 
@@ -357,39 +574,67 @@ footer a {
 
     <section id="faq">
 
+        <div class="eyebrow">Helpful Information</div>
+
         <h2>Frequently Asked Questions</h2>
 
         <details>
-            <summary>Can I activate my card on this website?</summary>
+            <summary>Can I activate my card here?</summary>
             <p>
-                No. Guide Academy provides educational
-                information only. Activation must be completed
-                through your card issuer.
+                No. This website provides educational
+                information only. Activation must be
+                completed through the official card issuer.
             </p>
         </details>
 
         <details>
             <summary>Do all prepaid cards require activation?</summary>
             <p>
-                Requirements vary by issuer and card type.
-                Refer to the instructions supplied with your card.
+                No. Requirements vary depending on the
+                card product and issuing company.
             </p>
         </details>
 
         <details>
-            <summary>Is there an activation fee?</summary>
+            <summary>How long does activation take?</summary>
             <p>
-                Fees depend on the card and issuing company.
-                Review your official cardholder agreement
-                for accurate information.
+                Processing times depend on the issuer
+                and any required verification procedures.
             </p>
         </details>
 
         <details>
-            <summary>What if my activation is unsuccessful?</summary>
+            <summary>Are there activation fees?</summary>
             <p>
-                Contact the card issuer using its official
-                customer support channels.
+                Fees vary between card products.
+                Refer to your official cardholder
+                agreement and fee schedule.
+            </p>
+        </details>
+
+        <details>
+            <summary>What if I cannot activate my card?</summary>
+            <p>
+                Contact the issuer using the official
+                customer support information supplied
+                with your card.
+            </p>
+        </details>
+
+        <details>
+            <summary>Does Guide Academy charge for this guide?</summary>
+            <p>
+                No. The educational information on
+                this website is available without charge.
+            </p>
+        </details>
+
+        <details>
+            <summary>Is Guide Academy a financial institution?</summary>
+            <p>
+                No. Guide Academy is an independent
+                educational website. It does not provide
+                banking, payment or card activation services.
             </p>
         </details>
 
@@ -397,24 +642,178 @@ footer a {
 
     <section id="about">
 
+        <div class="eyebrow">Our Purpose</div>
+
         <h2>About Guide Academy</h2>
 
-        <p>
-            Guide Academy is an independent educational
-            resource designed to help readers understand
-            prepaid retail cards, activation procedures
-            and responsible card usage.
-        </p>
+        <div class="card">
 
-        <p>
-            We do not issue, activate or manage payment
-            cards, access cardholder accounts or request
-            sensitive financial information.
-        </p>
+            <p>
+                Guide Academy is an independent educational
+                website focused on helping readers understand
+                general prepaid retail card activation
+                procedures and safe card usage.
+            </p>
+
+            <p>
+                Our content is intended for informational
+                purposes and does not replace official
+                instructions, cardholder agreements or
+                customer support.
+            </p>
+
+            <p>
+                We do not issue cards, perform financial
+                transactions, activate cards or manage
+                cardholder accounts.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="contact">
+
+        <div class="eyebrow">Get in Touch</div>
+
+        <h2>Contact Guide Academy</h2>
+
+        <div class="contact-box">
+
+            <p>
+                This section is intended for general
+                website enquiries, educational feedback
+                and content correction requests.
+            </p>
+
+            <div class="contact-note">
+                Our contact channel is not yet available.
+                For card-specific assistance, contact
+                your card issuer directly.
+            </div>
+
+            <p>
+                Never send payment card numbers,
+                PINs, passwords, security codes or
+                identity documents to this website.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section id="policies">
+
+        <div class="eyebrow">Website Information</div>
+
+        <h2>Privacy, Terms & Disclaimer</h2>
+
+        <details id="privacy">
+
+            <summary>Privacy Policy</summary>
+
+            <h3>Information Collection</h3>
+
+            <p>
+                The current version of this website does
+                not include an active contact form,
+                account registration or payment facility.
+            </p>
+
+            <h3>Website Hosting</h3>
+
+            <p>
+                This website is hosted using GitHub Pages.
+                The hosting provider may process technical
+                information such as IP addresses and
+                browser information to operate and
+                secure its services.
+            </p>
+
+            <h3>Cookies and Tracking</h3>
+
+            <p>
+                This page does not intentionally install
+                advertising cookies or third-party
+                analytics scripts. Hosting-provider
+                practices may differ.
+            </p>
+
+            <h3>Financial Information</h3>
+
+            <p>
+                This website does not request card
+                numbers, security codes, financial
+                account credentials or identity documents.
+            </p>
+
+            <h3>Policy Updates</h3>
+
+            <p>
+                This policy will be updated if contact
+                forms, analytics or other data-processing
+                features are introduced.
+            </p>
+
+        </details>
+
+        <details id="terms">
+
+            <summary>Terms of Use</summary>
+
+            <p>
+                The information provided by Guide Academy
+                is intended for general educational purposes.
+            </p>
+
+            <p>
+                Visitors should verify card-specific
+                requirements, fees, eligibility and
+                activation procedures with their card issuer.
+            </p>
+
+            <p>
+                The website does not guarantee activation,
+                account access or the availability of
+                any particular card service.
+            </p>
+
+            <p>
+                Content may be updated as information
+                and general procedures change.
+            </p>
+
+        </details>
+
+        <details id="disclaimer">
+
+            <summary>Independent Website Disclaimer</summary>
+
+            <p>
+                Guide Academy is an independent educational
+                resource and is not affiliated with,
+                endorsed by or operated by any card issuer,
+                bank or payment service provider.
+            </p>
+
+            <p>
+                This website does not provide card activation,
+                financial transactions, account management
+                or official customer support.
+            </p>
+
+            <p>
+                For official services and card-specific
+                assistance, visitors must contact their
+                respective card providers.
+            </p>
+
+        </details>
 
     </section>
 
 </div>
+
 </main>
 
 <footer>
@@ -423,19 +822,43 @@ footer a {
         <strong>Guide Academy</strong>
 
         <p>
-            Independent educational information.
-            Not affiliated with any card issuer.
+            Independent educational guidance for
+            understanding prepaid retail cards.
         </p>
 
-        <p>
-            <a href="#about">About</a> &nbsp; | &nbsp;
-            <a href="#faq">FAQs</a>
-        </p>
+        <div class="footer-links">
+            <a href="#guide">Guide</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Use</a>
+            <a href="#disclaimer">Disclaimer</a>
+        </div>
 
-        <p>© 2026 Guide Academy.</p>
+        <div class="copyright">
+            © 2026 Guide Academy. Educational use only.
+        </div>
 
     </div>
 </footer>
+
+<script>
+function openPolicySection() {
+    const id = window.location.hash.substring(1);
+    const target = document.getElementById(id);
+
+    if (target && target.tagName === "DETAILS") {
+        target.open = true;
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+}
+
+window.addEventListener("hashchange", openPolicySection);
+window.addEventListener("DOMContentLoaded", openPolicySection);
+</script>
 
 </body>
 </html>
